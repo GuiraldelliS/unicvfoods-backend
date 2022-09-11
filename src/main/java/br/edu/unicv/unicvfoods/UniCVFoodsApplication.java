@@ -4,10 +4,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class UnicvfoodsApplication {
+public class UniCVFoodsApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(UnicvfoodsApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(UniCVFoodsApplication.class, args);
+    }
 
 }
