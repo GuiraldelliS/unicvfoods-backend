@@ -1,16 +1,18 @@
 package br.edu.unicv.unicvfoods.api.controller;
 
-import br.edu.unicv.unicvfoods.domain.model.DepartmentEntity;
+import br.edu.unicv.unicvfoods.domain.model.BrandEntity;
 import br.edu.unicv.unicvfoods.domain.service.GenericService;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping(value = "/departments")
-public class DepartmentController extends GenericController<DepartmentEntity> {
+@RequestMapping(value = "/brands")
+public class BrandController extends GenericController<BrandEntity> {
 
-    public DepartmentController(GenericService<DepartmentEntity> service) {
+    public BrandController(GenericService<BrandEntity> service) {
         super(service);
     }
+
+
 
 }
