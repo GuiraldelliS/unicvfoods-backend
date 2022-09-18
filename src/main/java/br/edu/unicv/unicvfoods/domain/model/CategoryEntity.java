@@ -13,14 +13,14 @@ import javax.validation.constraints.Size;
 @Entity(name = "category")
 @Data
 
-public class CategoryEntity implements GenericEntity<CategoryEntity>{
+public class CategoryEntity implements GenericEntity<CategoryEntity> {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
     @NotBlank
-    @Size(min=1, max = 60)
+    @Size(min = 1, max = 60)
     private String name;
 
     @NotBlank

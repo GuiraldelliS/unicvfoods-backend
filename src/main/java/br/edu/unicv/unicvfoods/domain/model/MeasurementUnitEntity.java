@@ -19,7 +19,7 @@ public class MeasurementUnitEntity implements GenericEntity<MeasurementUnitEntit
     private long id;
 
     @NotBlank
-    @Size(min=2, max = 2)
+    @Size(min = 2, max = 2)
     private String abbreviation;
 
     @NotBlank

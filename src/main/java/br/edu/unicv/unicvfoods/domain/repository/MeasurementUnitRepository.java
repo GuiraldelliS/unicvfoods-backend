@@ -4,5 +4,5 @@ import br.edu.unicv.unicvfoods.domain.model.MeasurementUnitEntity;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface MeasurementUnitRepository extends GenericRepository<MeasurementUnitEntity>{
+public interface MeasurementUnitRepository extends GenericRepository<MeasurementUnitEntity> {
 }

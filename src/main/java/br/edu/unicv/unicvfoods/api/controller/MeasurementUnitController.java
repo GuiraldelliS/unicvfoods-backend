@@ -6,8 +6,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping(value = "/measurement-unit")
-public class MeasurementUnitController extends GenericController<MeasurementUnitEntity>{
+@RequestMapping(value = "/measurement-units")
+public class MeasurementUnitController extends GenericController<MeasurementUnitEntity> {
     public MeasurementUnitController(GenericService<MeasurementUnitEntity> service) {
         super(service);
     }

@@ -14,5 +14,4 @@ public class BrandController extends GenericController<BrandEntity> {
     }
 
 
-
 }
