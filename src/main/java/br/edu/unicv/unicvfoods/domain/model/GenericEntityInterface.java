@@ -1,6 +1,6 @@
 package br.edu.unicv.unicvfoods.domain.model;
 
-public interface GenericEntity<T> {
+public interface GenericEntityInterface<T> {
 
     void update(T entity);
 

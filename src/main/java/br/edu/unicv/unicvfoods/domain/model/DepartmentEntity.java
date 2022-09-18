@@ -12,7 +12,7 @@ import javax.validation.constraints.Size;
 
 @Entity(name = "department")
 @Data
-public class DepartmentEntity implements GenericEntity<DepartmentEntity> {
+public class DepartmentEntity implements GenericEntityInterface<DepartmentEntity> {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

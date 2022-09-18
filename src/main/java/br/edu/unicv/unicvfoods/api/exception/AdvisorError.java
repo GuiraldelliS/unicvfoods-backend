@@ -3,9 +3,7 @@ package br.edu.unicv.unicvfoods.api.exception;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 
-import java.time.LocalDateTime;
 import java.time.OffsetDateTime;
-import java.time.ZoneOffset;
 import java.util.HashMap;
 
 @Getter

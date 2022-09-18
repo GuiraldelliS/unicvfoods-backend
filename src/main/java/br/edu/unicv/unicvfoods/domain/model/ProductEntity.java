@@ -7,7 +7,7 @@ import javax.validation.constraints.*;
 
 @Entity(name = "product")
 @Data
-public class ProductEntity implements GenericEntity<ProductEntity> {
+public class ProductEntity implements GenericEntityInterface<ProductEntity> {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

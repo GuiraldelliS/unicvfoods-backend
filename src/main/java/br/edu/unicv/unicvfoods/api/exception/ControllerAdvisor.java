@@ -1,9 +1,10 @@
 package br.edu.unicv.unicvfoods.api.exception;
 
-import br.edu.unicv.unicvfoods.domain.exception.ResourceNotFoundException;
+import br.edu.unicv.unicvfoods.domain.exception.*;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.http.converter.HttpMessageNotReadableException;
 import org.springframework.web.HttpRequestMethodNotSupportedException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -31,6 +32,29 @@ public class ControllerAdvisor {
         requestError.addError("message", ex.getMessage());
 
         return ResponseEntity.status(HttpStatus.NOT_FOUND).body(requestError);
+
+    }
+
+    @ExceptionHandler( { CategoryNotFoundException.class,
+                         BrandNotFoundException.class,
+                         DepartmentNotFoundException.class,
+                         MeasurementUnitNotFoundException.class })
+    protected ResponseEntity<AdvisorError> handleResourceBadRequest(RuntimeException ex) {
+
+        AdvisorError requestError = new AdvisorError(HttpStatus.BAD_REQUEST.value());
+        requestError.addError("message", ex.getMessage());
+
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(requestError);
+
+    }
+
+    @ExceptionHandler(HttpMessageNotReadableException.class)
+    protected ResponseEntity<AdvisorError> handleHttpMessageNotReadableException(HttpMessageNotReadableException ex) {
+
+        AdvisorError requestError = new AdvisorError(HttpStatus.BAD_REQUEST.value());
+        requestError.addError("message", "JSON mal formatado");
+
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(requestError);
 
     }
 

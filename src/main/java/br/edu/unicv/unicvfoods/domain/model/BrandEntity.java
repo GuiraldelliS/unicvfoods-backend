@@ -11,7 +11,7 @@ import javax.validation.constraints.Size;
 
 @Entity(name = "brand")
 @Data
-public class BrandEntity implements GenericEntity<BrandEntity> {
+public class BrandEntity implements GenericEntityInterface<BrandEntity> {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

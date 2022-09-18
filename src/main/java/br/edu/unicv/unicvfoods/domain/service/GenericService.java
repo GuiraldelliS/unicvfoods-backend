@@ -2,7 +2,7 @@ package br.edu.unicv.unicvfoods.domain.service;
 
 import br.edu.unicv.unicvfoods.domain.configuration.MessageConfiguration;
 import br.edu.unicv.unicvfoods.domain.exception.ResourceNotFoundException;
-import br.edu.unicv.unicvfoods.domain.model.GenericEntity;
+import br.edu.unicv.unicvfoods.domain.model.GenericEntityInterface;
 import br.edu.unicv.unicvfoods.domain.repository.GenericRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
@@ -14,7 +14,7 @@ import javax.transaction.Transactional;
 
 @RequiredArgsConstructor
 @Log4j2
-public abstract class GenericService<T extends GenericEntity<T>> {
+public abstract class GenericService<T extends GenericEntityInterface<T>> {
 
     private final GenericRepository<T> repository;
     private final MessageConfiguration messageConfiguration;
