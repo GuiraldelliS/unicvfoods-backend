@@ -17,7 +17,7 @@ public class CategoryEntity implements GenericEntity<CategoryEntity>{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private long id;
 
     @NotBlank
     @Size(min=1, max = 60)
