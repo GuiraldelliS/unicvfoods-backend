@@ -3,6 +3,7 @@ package br.edu.unicv.unicvfoods.api.exception;
 import br.edu.unicv.unicvfoods.domain.exception.ResourceNotFoundException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.HttpRequestMethodNotSupportedException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 
@@ -31,13 +32,20 @@ public class ControllerAdvisor {
 
     }
 
+    @ExceptionHandler(HttpRequestMethodNotSupportedException.class)
+    protected ResponseEntity<AdvisorError> handleHttpRequestMethodNotSupportedException(Exception ex) {
+        return ResponseEntity.status(HttpStatus.METHOD_NOT_ALLOWED).build();
+    }
+
+
     @ExceptionHandler
     protected ResponseEntity<AdvisorError> handleException(Exception ex) {
-
         AdvisorError requestError = new AdvisorError(HttpStatus.INTERNAL_SERVER_ERROR.value());
         requestError.addError("message", ex.getMessage());
+        System.out.println(ex.toString());
 
-        return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(requestError);
+        return ResponseEntity.internalServerError().body(requestError);
     }
+
 
 }
