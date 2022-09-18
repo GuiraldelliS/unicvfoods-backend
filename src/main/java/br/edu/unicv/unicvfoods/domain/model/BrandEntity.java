@@ -15,7 +15,7 @@ public class BrandEntity implements GenericEntity<BrandEntity> {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private long id;
 
     @NotBlank
     @Size(min = 5, max = 255)
