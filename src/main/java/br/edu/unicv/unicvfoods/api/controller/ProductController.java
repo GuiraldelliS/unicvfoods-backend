@@ -23,6 +23,7 @@ public class ProductController {
     private final CategoryService categoryService;
     private final BrandService brandService;
     private final MeasurementUnitService measurementUnitService;
+    private final PackingService packingService;
 
     private final MessageConfiguration messageConfiguration;
 
@@ -65,6 +66,7 @@ public class ProductController {
         product.setCategory(this.getCategoryFromDto(dto));
         product.setBrand(this.getBrandFromDto(dto));
         product.setMeasurementUnit(this.getMeasurementUnitFromDto(dto));
+        product.setPacking(this.getPackingFromDto(dto));
 
         return product;
 
@@ -112,6 +114,17 @@ public class ProductController {
                     .replace("{0}", String.valueOf(dto.getDepartmentId())));
         }
         return department;
+    }
+
+    private PackingEntity getPackingFromDto(ProductDTO dto) {
+        PackingEntity packing;
+        try {
+            packing = packingService.get(dto.getPackingId());
+        } catch (ResourceNotFoundException e) {
+            throw new PackingNotFoundException(messageConfiguration.getPackingNotFoundMessage()
+                    .replace("{0}", String.valueOf(dto.getPackingId())));
+        }
+        return packing;
     }
 
 }

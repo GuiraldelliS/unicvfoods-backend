@@ -8,10 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping(value = "/brands")
 public class BrandController extends GenericController<BrandEntity> {
-
     public BrandController(GenericService<BrandEntity> service) {
         super(service);
     }
-
-
 }

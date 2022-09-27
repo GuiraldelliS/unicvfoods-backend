@@ -25,4 +25,6 @@ public class ProductDTO {
 
     private long measurementUnitId;
 
+    private long packingId;
+
 }

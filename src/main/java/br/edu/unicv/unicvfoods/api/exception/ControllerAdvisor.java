@@ -35,10 +35,11 @@ public class ControllerAdvisor {
 
     }
 
-    @ExceptionHandler( { CategoryNotFoundException.class,
-                         BrandNotFoundException.class,
-                         DepartmentNotFoundException.class,
-                         MeasurementUnitNotFoundException.class })
+    @ExceptionHandler({CategoryNotFoundException.class,
+            BrandNotFoundException.class,
+            DepartmentNotFoundException.class,
+            MeasurementUnitNotFoundException.class,
+            PackingNotFoundException.class})
     protected ResponseEntity<AdvisorError> handleResourceBadRequest(RuntimeException ex) {
 
         AdvisorError requestError = new AdvisorError(HttpStatus.BAD_REQUEST.value());

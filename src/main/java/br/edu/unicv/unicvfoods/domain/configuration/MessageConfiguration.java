@@ -32,4 +32,7 @@ public class MessageConfiguration {
     @NotBlank
     private String categoryNotFoundMessage;
 
+    @NotBlank
+    private String packingNotFoundMessage;
+
 }

@@ -48,6 +48,11 @@ public class ProductEntity implements GenericEntityInterface<ProductEntity> {
     @NotNull
     private MeasurementUnitEntity measurementUnit;
 
+    @ManyToOne
+    @JoinColumn(name = "packing_id")
+    @NotNull
+    private PackingEntity packing;
+
     @Override
     public void update(ProductEntity entity) {
         this.description = entity.description;
@@ -60,6 +65,7 @@ public class ProductEntity implements GenericEntityInterface<ProductEntity> {
         this.department = entity.department;
         this.category = entity.category;
         this.measurementUnit = entity.measurementUnit;
+        this.packing = entity.packing;
     }
 
     @Override
